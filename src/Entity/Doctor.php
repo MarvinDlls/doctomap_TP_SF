@@ -33,6 +33,9 @@ class Doctor
     #[ORM\Column(length: 5)]
     private ?string $zip = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
     #[ORM\Column(length: 12, nullable: true)]
     private ?string $phone = null;
 
@@ -109,6 +112,18 @@ class Doctor
     public function setZip(string $zip): static
     {
         $this->zip = $zip;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }
